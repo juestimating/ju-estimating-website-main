@@ -98,11 +98,30 @@ export default function Footer() {
               <div className="flex items-start">
                 <MapPin className="h-4 w-4 mr-2 mt-0.5 flex-shrink-0" />
                 <div className="leading-relaxed">
-                  {siteConfig.address.street}
+                  <strong>Primary Address:</strong>
                   <br />
-                  {siteConfig.address.suite}
+                  {siteConfig.address.primary.street}
                   <br />
-                  {siteConfig.address.city}
+                  {siteConfig.address.primary.suite && (
+                    <>
+                      {siteConfig.address.primary.suite}
+                      <br />
+                    </>
+                  )}
+                  {siteConfig.address.primary.city}
+                  <br />
+                  <br />
+                  <strong>Secondary Address:</strong>
+                  <br />
+                  {siteConfig.address.secondary.street}
+                  <br />
+                  {siteConfig.address.secondary.suite && (
+                    <>
+                      {siteConfig.address.secondary.suite}
+                      <br />
+                    </>
+                  )}
+                  {siteConfig.address.secondary.city}
                 </div>
               </div>
             </div>
