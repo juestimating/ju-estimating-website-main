@@ -12,12 +12,58 @@ import FloatingChat from "@/app/components/FloatingChat"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Construction Estimating Services | Professional Cost Analysis",
+  metadataBase: new URL("https://www.juestimating.com"),
+
+  title: {
+    default: "Construction Estimating Services | Juestimating",
+    template: "%s | Juestimating",
+  },
+
   description:
-    "Expert construction estimating services for commercial, residential, and industrial projects. Get accurate cost estimates and takeoffs from certified professionals.",
-  keywords:
-    "construction estimating, cost estimation, takeoff services, construction bidding, project estimation",
-  generator: "v0.dev",
+    "Expert construction estimating and quantity takeoff services for commercial, residential, and industrial projects.",
+
+  keywords: [
+    "construction estimating",
+    "quantity takeoff services",
+    "cost estimation",
+    "construction bidding",
+    "project estimation",
+  ],
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "Construction Estimating Services | Juestimating",
+    description:
+      "Accurate and professional construction cost estimation services.",
+    url: "https://www.juestimating.com",
+    siteName: "Juestimating",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/og",
+        width: 1200,
+        height: 630,
+        alt: "Juestimating Construction Estimating Services",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Construction Estimating Services | Juestimating",
+    description:
+      "Expert construction estimating and quantity takeoff services.",
+    images: ["/og"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({
@@ -28,7 +74,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        
         {/* Google Tag Manager Script */}
         <Script
           id="gtm-script"
